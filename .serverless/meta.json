@@ -1,0 +1,71 @@
+{
+  "C:\\Users\\abhig\\email-api-serverless\\serverless.yml": {
+    "versionFramework": "4.18.0",
+    "servicePath": "C:\\Users\\abhig\\email-api-serverless\\serverless.yml",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "send-email-api",
+      "provider": {
+        "name": "aws",
+        "runtime": "python3.9",
+        "environment": {
+          "EMAIL_USER": "${env:EMAIL_USER}",
+          "EMAIL_PASS": "${env:EMAIL_PASS}"
+        }
+      },
+      "plugins": [
+        "serverless-offline"
+      ],
+      "functions": {
+        "sendEmail": {
+          "handler": "main.send_email",
+          "events": [
+            {
+              "http": {
+                "path": "send-email",
+                "method": "post",
+                "cors": true
+              }
+            }
+          ]
+        }
+      }
+    },
+    "provider": {
+      "name": "aws",
+      "runtime": "python3.9",
+      "environment": {
+        "EMAIL_USER": "${env:EMAIL_USER}",
+        "EMAIL_PASS": "${env:EMAIL_PASS}"
+      }
+    },
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "error": {
+      "message": "Cannot resolve '${env:EMAIL_USER}' variable at 'provider.environment.EMAIL_USER'. No value is available for this variable, and no default value was provided. Please check your variable definitions or provide a default value.",
+      "stack": "Error: Cannot resolve '${env:EMAIL_USER}' variable at 'provider.environment.EMAIL_USER'. No value is available for this variable, and no default value was provided. Please check your variable definitions or provide a default value.\n    at _ResolverManager.resolve (file:///C:/Users/abhig/.serverless/releases/4.18.0/package/dist/sf-core.js:809:31911)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async #handlePlaceholderNode (file:///C:/Users/abhig/.serverless/releases/4.18.0/package/dist/sf-core.js:809:30118)\n    at async file:///C:/Users/abhig/.serverless/releases/4.18.0/package/dist/sf-core.js:809:27990\n    at async processNodeAndHandleCompletion (file:///C:/Users/abhig/.serverless/releases/4.18.0/package/dist/sf-core.js:809:16769)",
+      "code": "MISSING_VARIABLE_RESULT"
+    },
+    "serviceRawFile": "service: send-email-api\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: python3.9\r\n  environment:\r\n    EMAIL_USER: ${env:EMAIL_USER}\r\n    EMAIL_PASS: ${env:EMAIL_PASS}\r\n\r\nplugins:\r\n  - serverless-offline\r\n\r\nfunctions:\r\n  sendEmail:\r\n    handler: main.send_email\r\n    events:\r\n      - http:\r\n          path: send-email\r\n          method: post\r\n          cors: true\r\n",
+    "command": [
+      "offline"
+    ],
+    "options": {},
+    "orgId": "a91943e6-e12d-45e6-b1e2-08b7734fc0d2",
+    "orgName": "swarn",
+    "userId": "F5nXfnX4wXy9bCswMh",
+    "userName": "swarn",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}

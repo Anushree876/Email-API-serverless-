@@ -1,0 +1,20 @@
+service: send-email-api
+
+provider:
+  name: aws
+  runtime: python3.9
+  environment:
+    EMAIL_USER: ${env:MY_EMAIL}
+    EMAIL_PASS: ${env:MY_PSW}
+
+plugins:
+  - serverless-offline
+
+functions:
+  sendEmail:
+    handler: main.send_email
+    events:
+      - http:
+          path: send-email
+          method: post
+          cors: true
