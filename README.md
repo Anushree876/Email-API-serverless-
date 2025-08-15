@@ -79,7 +79,6 @@ curl -X POST http://localhost:3000/dev/send-email \
     "subject": "Hello",
     "body_text": "This is a test email from Serverless!"
   }'
-
 ✅ Sample Response
 json
 
