@@ -24,8 +24,8 @@ email-api-serverless/
 ├── requirements.txt # Python dependencies
 └── README.md # This file
 
-yaml
-Copy code
+
+
 
 ---
 
@@ -46,8 +46,8 @@ Create a `.env` file in the root with:
 MY_EMAIL=your_email@gmail.com
 MY_PSW=your_gmail_password_or_app_password
 
-yaml
-Copy code
+
+
 
 ---
 
@@ -62,16 +62,16 @@ npm install -g serverless
 
 # Install offline plugin (locally)
 npm install serverless-offline
+
 ▶️ Run Locally
 bash
-Copy code
 # Start the local server
-sls offline
+serverless offline
+
 📬 Send a Test Email
 Use Postman or curl:
 
 bash
-Copy code
 curl -X POST http://localhost:3000/dev/send-email \
   -H "Content-Type: application/json" \
   -d '{
@@ -79,9 +79,10 @@ curl -X POST http://localhost:3000/dev/send-email \
     "subject": "Hello",
     "body_text": "This is a test email from Serverless!"
   }'
+
 ✅ Sample Response
 json
-Copy code
+
 {
   "message": "Email sent successfully!"
 }
